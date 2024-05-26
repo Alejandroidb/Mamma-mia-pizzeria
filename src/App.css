@@ -1,0 +1,17 @@
+.banner {
+  background-image: url("https://orders.pizzadelight.com/assets/img/pizzadelight/banner.jpg");
+  background-size: cover;
+  background-position: center;
+  position: static;
+}
+.custom-list {
+  list-style: none;
+  padding-left: 0;
+}
+.custom-list li::before {
+  content: "\1F355"; 
+  margin-right: 10px;
+}
+.img {
+  height: 100px;
+}
