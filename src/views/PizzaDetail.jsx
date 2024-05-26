@@ -37,7 +37,7 @@ const PizzaDetail = () => {
               <div>
               <button
                 className="btn btn-success me-1"
-                onClick={() => addToCart(pizza)}
+                onClick={() => anadirCarrito(pizza)}
               >
                 Agregar 🛒
               </button>
