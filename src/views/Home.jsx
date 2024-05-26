@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { PizzaContext } from '../contexts/PizzaContext'
 import Banner from '../components/Banner'
+import { NavLink } from 'react-router-dom'
 
 const Home = () => {
   const {pizzas, VerMas, anadirCarrito} = useContext(PizzaContext)
@@ -35,7 +36,9 @@ const Home = () => {
         }
       </div>
     </div>
-    
+    <div className='d-flex justify-content-center mt-3'>
+        <NavLink to='/carrito' className='btn btn-primary'>Ir a Carrito</NavLink>
+      </div>
     </>
   )
 }

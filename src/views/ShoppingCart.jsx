@@ -70,9 +70,13 @@ const ShoppingCart = () => {
           <div className="mt-3">
             <h4>Total: ${PrecioTotal}</h4>
           </div>
-          <NavLink to='/pagos' className='btn btn-success'>Ir a Pagar</NavLink>
+          
         </div>
       )}
+      <div className="d-flex justify-content-between">
+          <NavLink to='/pagos' className='btn btn-success'>Ir a Pagar</NavLink>
+          <NavLink to='/' className='btn btn-danger ms-auto'>Volver al menú</NavLink>
+          </div>
     </div>
   );
 };
