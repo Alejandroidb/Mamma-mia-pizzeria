@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { PizzaContext } from "../contexts/PizzaContext";
+import { NavLink } from "react-router-dom";
 
 const ShoppingCart = () => {
   const { carrito, anadirCarrito, removerCarrito } = useContext(PizzaContext);
@@ -69,6 +70,7 @@ const ShoppingCart = () => {
           <div className="mt-3">
             <h4>Total: ${PrecioTotal}</h4>
           </div>
+          <NavLink to='/pagos' className='btn btn-success'>Ir a Pagar</NavLink>
         </div>
       )}
     </div>
