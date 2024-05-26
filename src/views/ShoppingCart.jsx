@@ -6,11 +6,11 @@ const ShoppingCart = () => {
   const { carrito, anadirCarrito, removerCarrito } = useContext(PizzaContext);
 
   // Agrupar pizzas por tipo
-  const groupedPizzas = carrito.reduce((acc, pizza) => {
-    const existingPizza = acc.find((p) => p.id === pizza.id);
-    if (existingPizza) {
-      existingPizza.quantity += 1;
-      existingPizza.totalPrice += pizza.price;
+  const pizzasAgrupadas = carrito.reduce((acc, pizza) => {
+    const pizzaExistente = acc.find((p) => p.id === pizza.id);
+    if (pizzaExistente) {
+      pizzaExistente.quantity += 1;
+      pizzaExistente.totalPrice += pizza.price;
     } else {
       acc.push({ ...pizza, quantity: 1, totalPrice: pizza.price });
     }
@@ -18,7 +18,7 @@ const ShoppingCart = () => {
   }, []);
 
   // Calcular el precio total
-  const PrecioTotal = groupedPizzas.reduce(
+  const PrecioTotal = pizzasAgrupadas.reduce(
     (total, pizza) => total + pizza.totalPrice,
     0
   );
@@ -26,11 +26,11 @@ const ShoppingCart = () => {
   return (
     <div className="container mt-3">
       <h3>Carrito de Compras</h3>
-      {groupedPizzas.length === 0 ? (
+      {pizzasAgrupadas.length === 0 ? (
         <p>El carrito está vacío.</p>
       ) : (
         <div>
-          {groupedPizzas.map((pizza) => (
+          {pizzasAgrupadas.map((pizza) => (
             <div key={pizza.id} className="card mb-3">
               <div className="row g-0">
                 <div className="col-md-4">
