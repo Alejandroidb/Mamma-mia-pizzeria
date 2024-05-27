@@ -9,7 +9,7 @@ const Navigation = () => {
   const PrecioTotal = carrito.reduce((total, pizza) => total + pizza.price, 0);
 
   return (
-    <nav className="navbar navbar-expand-lg bg-primary">
+    <nav className="navbar navbar-expand-lg bg-primary sticky-top">
       <div className="container-fluid">
         <NavLink to='/' className="navbar-brand text-light">
           Mamma Mia!
